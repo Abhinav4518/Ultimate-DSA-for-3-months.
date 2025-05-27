@@ -1,0 +1,20 @@
+#ROOT TO LEAF PATHS
+bool getpath(Node *root,vector<int> &arr,int x){
+      if(!root)return false;
+      arr.push_back(root->data);
+      
+      if(root->data==x)return true;
+      
+      if(getpath(root->left,arr,x)|| getpath(root->right,arr,x)) return true;
+      
+      arr.pop_back();
+      return false;
+  }
+    vector<vector<int>> Paths(Node* root) {
+        // code here
+        vector<int>arr;
+        int a;
+        if(a==NULL)return arr;
+        getpath(root,arr,a);
+        return arr;
+    }
